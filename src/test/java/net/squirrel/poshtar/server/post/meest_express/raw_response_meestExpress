@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html>
+<head>
+     <meta charset="utf-8">
+     <title>Отслеживание отправлений</title>
+     <link rel="stylesheet" href="https://meest-express.com.ua/templates/me/css/jquery-ui.css?841" type="text/css" media="all">
+	 <link rel="stylesheet" href="https://meest-express.com.ua/cache/me/styles-template-lessleafo.css?853" type="text/css" media="all">
+	 <script src="https://meest-express.com.ua/media/jui/js/jquery.min.js" type="text/javascript"></script>
+	 <script src="https://meest-express.com.ua/media/jui/js/jquery-noconflict.js" type="text/javascript"></script>
+	 <script src="https://meest-express.com.ua/media/jui/js/jquery-migrate.min.js" type="text/javascript"></script>
+	 <script src="https://meest-express.com.ua/templates/me/js/jquery-ui.js?304" type="text/javascript"></script>
+	 <script src="https://meest-express.com.ua/templates/me/js/lightbox.js?307" type="text/javascript"></script>
+</head>
+<body class="tmpl-index itemid-178 lang-uk com-tracking view-defaults layout-none task-none zoo-itemid-0 zoo-categoryid-0 device-ios-no device-android-no device-mobile-no device-table-no frontpage-no">
+   <div class="wrapper">
+	<div style="display: none;">
+			</div>
+	   <div class="fronpage_2">
+			<div class="page">
+				<div class="component">
+					<div class="com_tracking">
+						<div class="t_top">
+							<form method="post" action="https://t.meest-group.com/" id="t_form" name="t_form" onSubmit = "return tracking_search()" style="margin: 0;" target="_blank">
+								<div class="t_title">Отслеживание отправлений</div>
+								<input type="text" id="declar" name="tracking" class="declar" placeholder="номер отправления" value="708-3570243">
+								<input type="hidden" value="" name="agent" id="agent">
+								<div class="track_btn" onclick="tracking_search(); document.forms['t_form'].submit();"></div>
+							</form>
+
+
+
+						</div>
+						<div class="t_img">
+													</div>
+												<div class="clear"></div>
+						<div style="padding: 10px 0; color: #ed1c24; font-size: 16px; ">Уважаемые клиенты, в связи с погодными условиями возможны задержки с доставкой. Просим прощения за неудобства!</div>
+						<div style="display: none; margin-bottom: 14px; font-size: 18px; color: #0060af; " id="t_table_res">Результаты поиска:</div>
+						<table class="t_table_info" id="t_table_info" style="">
+														<tr>
+								<td class="tr_l">Номер декларации:</td>
+								<td class="tr_r"><div class="t_info_deklar" id="t_info_deklar">708-3570243</div></td>
+							</tr>
+																					<tr>
+								<td class="tr_l">Маршрут:</td>
+								<td class="tr_r"><div class="t_info_route" id="t_info_route">Канів - Рівне</div></td>
+							</tr>
+																					<tr>
+								<td class="tr_l">Телефон отправителя:</td>
+								<td class="tr_r"><div class="t_info_phone_s" id="t_info_phone_s">******5126</div></td>
+							</tr>
+																					<tr>
+								<td class="tr_l">Телефон получателя:</td>
+								<td class="tr_r"><div class="t_info_phone_r" id="t_info_phone_r">******2999</div></td>
+							</tr>
+																																										<tr>
+								<td class="tr_l">Документы для получения:</td>
+								<td class="tr_r"><div class="t_info_documents" id="t_info_documents" style="font-size: 13px;">Документ, удостоверяющий личность, <br> и доверенность (для юридических лиц)<br>или моб. телефон с номером, указанным в декларации <br> (для получения в почтомате)</div></td>
+							</tr>
+																					<tr>
+								<td class="tr_l">Условия доставки:</td>
+								<td class="tr_r"><div class="t_info_delivery" id="t_info_delivery" style="font-size: 13px;">Доставка до адреса</div></td>
+							</tr>
+														<tr>
+								<td class="tr_l"></td>
+								<td class="tr_r">
+									<div class="btn_row">
+										<a class="btn_wrong" href="https://siteheart.com/webconsultation/731850?s=1" target="siteheart_sitewindow_731850" onclick="o=window.open;o('https://siteheart.com/webconsultation/731850?s=1', 'siteheart_sitewindow_731850', 'width=550,height=400,top=30,left=30,resizable=yes'); return false;">
+											Заметили несоответствие?										</a>
+										<a href="javascript: window.print()" class="btn_print">Распечатать </a>
+									</div>
+									<div class="t_subscribe_txt">Хотите получать сообщение об изменении <br> статуса вашего отправления на электронную почту?</div>
+									<a href="javascript:showSubscribe()" class="btn_subscribe">Получать статус на e-mail</a>
+									<div class="t_info_delivery2" id="t_info_delivery2"></div>
+								</td>
+							</tr>
+						</table>
+						<div class="clear"></div>
+						<div id="blc_res" class="blc_res">
+							<div id="blc_res_inner" class="blc_res_inner" style="">
+								<table id="track_table" class="track_table">
+									<tr>
+										<th class="th_1">Дата </th>
+										<th class="th_2">Время</th>
+										<th class="th_3">Страна </th>
+										<th class="th_4">Город</th>
+										<th class="th_5">Мест </th>
+										<th class="th_6">Сообщение/Детальное сообщение</th>
+									</tr>
+																				<tr class="tab_res tr_1">
+												<td>2016-10-04</td>
+												<td>09:07:46</td>
+												<td>УКРАИНА</td>
+												<td>Канів</td>
+												<td>1/1</td>
+												<td>Поступление посылки на отделение <br>Канів-206-ї Дивізії</td>
+											</tr>
+																						<tr class="tab_res tr_2">
+												<td>2016-10-04</td>
+												<td>16:42:49</td>
+												<td>УКРАИНА</td>
+												<td>Канів</td>
+												<td>1/1</td>
+												<td>Посылка передана курьеру для перемещения<br>Канів-206-ї Дивізії</td>
+											</tr>
+																						<tr class="tab_res tr_1">
+												<td>2016-10-05</td>
+												<td>16:32:02</td>
+												<td>УКРАИНА</td>
+												<td>Черкаси</td>
+												<td>1/1</td>
+												<td>Посылка оставила сортировочный центр в направлении <br>Рівне</td>
+											</tr>
+																						<tr class="tab_res tr_2">
+												<td>2016-10-05</td>
+												<td>22:20:33</td>
+												<td>УКРАИНА</td>
+												<td>Софіївська Борщагівка</td>
+												<td>1/1</td>
+												<td>Посылка прибыла на сортировочный центр<br>Софиевская Борщаговка</td>
+											</tr>
+																						<tr class="tab_res tr_1">
+												<td>2016-10-06</td>
+												<td>00:42:28</td>
+												<td>УКРАИНА</td>
+												<td>Софіївська Борщагівка</td>
+												<td>1/1</td>
+												<td>Посылка оставила сортировочный центр в направлении <br>Рівне</td>
+											</tr>
+																						<tr class="tab_res tr_2">
+												<td>2016-10-06</td>
+												<td>07:37:19</td>
+												<td>УКРАИНА</td>
+												<td>Рівне</td>
+												<td>1/1</td>
+												<td>Посылка прибыла на сортировочный центр<br>Ровно</td>
+											</tr>
+																						<tr class="tab_res tr_1">
+												<td>2016-10-06</td>
+												<td>10:17:53</td>
+												<td>УКРАИНА</td>
+												<td>Рівне</td>
+												<td>1/1</td>
+												<td>Выдано курьеру<br></td>
+											</tr>
+																						<tr class="tab_res tr_2">
+												<td>2016-10-06</td>
+												<td>12:59:18</td>
+												<td>УКРАИНА</td>
+												<td>Рівне</td>
+												<td>1/1</td>
+												<td>Курьером запланировано время доставки c 13:00 по 14:00<br></td>
+											</tr>
+																						<tr class="tab_res tr_1">
+												<td>2016-10-06</td>
+												<td>14:34:11</td>
+												<td>УКРАИНА</td>
+												<td>Рівне</td>
+												<td>1/1</td>
+												<td>Предыдущие данные с маршрута доставки: Отправление вручено получателю<br></td>
+											</tr>
+																						<tr class="tab_res tr_2">
+												<td>2016-10-06</td>
+												<td>15:18:59</td>
+												<td>УКРАИНА</td>
+												<td>Рівне</td>
+												<td>1/1</td>
+												<td>Статус доставлено - подтверждено<br>06.10.2016</td>
+											</tr>
+																			</table>
+															</div>
+						</div>
+					</div>
+					<div id="dialog_subsc" class="dialog_subsc" style="display: none;">
+						<div class="dialog_subsc">
+							<div class="sbs_title">Получить изменении статуса отправления на e-mail:</div>
+							<div class="sbs_label">Номер отправления:</div>
+							<input type="text" class="sbs_nomer" id="sbs_nomer">
+							<div class="sbs_label">email</div>
+							<input type="text" class="sbs_email" id="sbs_email">
+							<div class="sbs_agree">
+								<input type="checkbox" id="sbs_agree" value="1" checked>
+								<label for="sbs_agree">Хочу получать другие сообщения от Meest Group на e-mail</label>
+							</div>
+							<div>
+								<input type="button" class="button" value="Получить" onclick="subscribe()">
+							</div>
+						</div>
+					</div>
+					<div id="dlg_msg_subscr_ok" style="display:none">
+						Вы успешно подписались на сообщение при изменении статуса					</div>
+					<div id="dlg_msg_subscr_doubl" style="display:none">
+						Вы уже подписаны на уведомления об изменении статуса					</div>
+					<div id="dlg_msg_subscr_fail" style="display:none">
+						Не удается подписаться на изменение статусов					</div>
+					<script>
+						var err = '';
+						var lang = 'ru';
+						jQuery( document ).ready(function() {
+							if (err == 'no_find'){
+								//showMessage('', 'Відправлення не знайдено<br> Можливо це номер компанії відправника? Виберіть компанію  відправника та  повторіть пошук');
+							}
+						})
+					</script>
+
+					<script>
+						function validateEmail(email) {
+							var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+							return re.test(email);
+						}
+						function tracking_search(){
+							var send = false;
+							var t_form = document.getElementById('t_form');
+							if (t_company_sel != ''){
+								var track_num = jQuery('#declar').val();
+								track_num = track_num.replace(new RegExp('/','g'), '_');
+								var path = t_company_sel.replace('t_', '') + '/';
+
+								if (t_company_sel == 't_amway'){
+									track_num = 'AM' + track_num;
+								}
+
+								path = 'https://t.meest-group.com' + '/' + path + lang + '/' + track_num;
+								t_form.action = path;
+								t_form.target = '_blank';
+								send = true;
+							} else {
+								t_form.action = '';
+								t_form.target = '_self';
+								send = true;
+								//trackingSearch();
+							}
+
+							return send;
+						}
+
+						function showSubscribe() {
+							jQuery('#sbs_nomer').val(jQuery('#declar').val());
+							jQuery('#dialog_subsc').dialog({
+								dialogClass: 'dialog_subscribe',
+								width: 530,
+								height: 320,
+								modal: true
+							});
+						}
+
+						function subscribe(){
+							jQuery('#sbs_nomer, #sbs_email').removeClass('err');
+							var res = true;
+							var sbs_nomer = jQuery('#sbs_nomer').val();
+							var sbs_email = jQuery('#sbs_email').val();
+							if (sbs_nomer == ''){
+								 jQuery('#sbs_nomer').addClass('err');
+								 res = false;
+							}
+							if (!validateEmail(sbs_email)){
+								 jQuery('#sbs_email').addClass('err');
+								 res = false;
+							}
+							if (res){
+								var agent  = jQuery('#agent').val();
+								if (agent == ''){
+									var post_url = 'get.php?what=tracking&number=' + sbs_nomer;
+								} else {
+									var post_url = 'get.php?what=tracking_agent&number=' + sbs_nomer + '&agent=' + agent;
+								}
+								var agree  = document.getElementById('sbs_agree').checked;
+								if (agree){
+									post_url += '&agree=1';
+								} else {
+									post_url += '&agree=0';
+								}
+								post_url += '&out=html&subscribe&email=' + sbs_email;
+								jQuery.post(post_url, {}, function(res){
+									jQuery( '#dialog_subsc' ).dialog( 'close' );
+									if (res == '000'){
+										jQuery('#dlg_msg_subscr_ok').dialog();
+									} else {
+										if (res == '1') {
+											jQuery('#dlg_msg_subscr_doubl').dialog();
+										} else {
+											jQuery('#dlg_msg_subscr_fail').dialog();
+										}
+									}
+								})
+							}
+						}
+
+						var t_selector = '#t_lamoda, #t_amway, #t_leboutique, #t_bonprix, #t_next, #t_stylepit, #t_eurobuy, #t_answear, #t_modnakasta';
+						var t_company_sel = '';
+						jQuery( document ).ready(function() {
+
+							jQuery(t_selector).click( function() {
+								jQuery(t_selector).removeClass('t_company_selected');
+								if (this.id == t_company_sel){
+									t_company_sel = '';
+
+								} else {
+									t_company_sel = this.id;
+									jQuery('#' + this.id).addClass('t_company_selected');
+									//tracking_search(); document.forms['t_form'].submit();
+								}
+							} )
+
+							jQuery('#t_img_1').click( function() {
+								//window.parent.location.href = 'https://meest-group.globalmoney.ua/?base1c=1C_Logistic#debt';
+								window.parent.location.href = 'https://meest-express.com.ua/ru/services/mymeest';
+							});
+							jQuery('#t_img_2').click( function() {
+								window.parent.location.href = 'https://meest-express.com.ua/ru/services/mgnovennye-perevody';
+							});
+						});
+
+					</script>
+				</div>
+			</div>
+	   </div>
+	</div>
+</body>
+</html>
+
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+     <meta charset="utf-8">
+     <title>Отслеживание отправлений</title>
+     <link rel="stylesheet" href="https://meest-express.com.ua/templates/me/css/jquery-ui.css?841" type="text/css" media="all">
+	 <link rel="stylesheet" href="https://meest-express.com.ua/cache/me/styles-template-lessleafo.css?853" type="text/css" media="all">
+	 <script src="https://meest-express.com.ua/media/jui/js/jquery.min.js" type="text/javascript"></script>
+	 <script src="https://meest-express.com.ua/media/jui/js/jquery-noconflict.js" type="text/javascript"></script>
+	 <script src="https://meest-express.com.ua/media/jui/js/jquery-migrate.min.js" type="text/javascript"></script>
+	 <script src="https://meest-express.com.ua/templates/me/js/jquery-ui.js?304" type="text/javascript"></script>
+	 <script src="https://meest-express.com.ua/templates/me/js/lightbox.js?307" type="text/javascript"></script>
+</head>
+<body class="tmpl-index itemid-178 lang-uk com-tracking view-defaults layout-none task-none zoo-itemid-0 zoo-categoryid-0 device-ios-no device-android-no device-mobile-no device-table-no frontpage-no">
+   <div class="wrapper">
+	<div style="display: none;">
+			</div>
+	   <div class="fronpage_2">
+			<div class="page">
+				<div class="component">
+					<div class="com_tracking">
+						<div class="t_top">
+							<form method="post" action="https://t.meest-group.com/" id="t_form" name="t_form" onSubmit = "return tracking_search()" style="margin: 0;" target="_blank">
+								<div class="t_title">Отслеживание отправлений</div>
+								<input type="text" id="declar" name="tracking" class="declar" placeholder="номер отправления" value="7083570243">
+								<input type="hidden" value="" name="agent" id="agent">
+								<div class="track_btn" onclick="tracking_search(); document.forms['t_form'].submit();"></div>
+							</form>
+														<div class="t_company_title">
+								<span class="red">Отправление не найдено!</span><br>
+							</div>
+							<div class="t_company_bl">
+																<div class="t_companies">
+									<div class="t_company t_modnakasta" id="t_modnakasta">
+										<div class="t_company_inner"></div>
+									</div>
+									<div class="t_company t_lamoda" id="t_lamoda">
+										<div class="t_company_inner"></div>
+									</div>
+									<div class="t_company t_amway" id="t_amway">
+										<div class="t_company_inner"></div>
+									</div>
+									<div class="t_company t_leboutique" id="t_leboutique">
+										<div class="t_company_inner"></div>
+									</div>
+									<div class="t_company t_bonprix" id="t_bonprix">
+										<div class="t_company_inner"></div>
+									</div>
+									<div class="t_company t_next" id="t_next">
+										<div class="t_company_inner"></div>
+									</div>
+									<div class="t_company t_stylepit" id="t_stylepit">
+										<div class="t_company_inner"></div>
+									</div>
+									<div class="t_company t_eurobuy" id="t_eurobuy">
+										<div class="t_company_inner"></div>
+									</div>
+									<div class="t_company t_answear" id="t_answear">
+										<div class="t_company_inner"></div>
+									</div>
+								</div>
+															</div>
+							<div class="t_not_f_info">Если поиск оказался неудачным сделайте запрос на наш <a href="https://siteheart.com/webconsultation/731850?s=1" target="siteheart_sitewindow_731850" onclick="o=window.open;o('https://siteheart.com/webconsultation/731850?s=1', 'siteheart_sitewindow_731850', 'width=550,height=400,top=30,left=30,resizable=yes'); return false;">online-chat</a></div>
+
+
+
+						</div>
+						<div class="t_img">
+													</div>
+												<div class="clear"></div>
+						<div style="padding: 10px 0; color: #ed1c24; font-size: 16px;  display: none;">Уважаемые клиенты, в связи с погодными условиями возможны задержки с доставкой. Просим прощения за неудобства!</div>
+						<div style="display: none; margin-bottom: 14px; font-size: 18px; color: #0060af; " id="t_table_res">Результаты поиска:</div>
+						<table class="t_table_info" id="t_table_info" style=" display: none;">
+																																																															<tr>
+								<td class="tr_l">Документы для получения:</td>
+								<td class="tr_r"><div class="t_info_documents" id="t_info_documents" style="font-size: 13px;">Документ, удостоверяющий личность, <br> и доверенность (для юридических лиц)<br>или моб. телефон с номером, указанным в декларации <br> (для получения в почтомате)</div></td>
+							</tr>
+																					<tr>
+								<td class="tr_l">Условия доставки:</td>
+								<td class="tr_r"><div class="t_info_delivery" id="t_info_delivery" style="font-size: 13px;">Доставка в отделение (или почтомат)</div></td>
+							</tr>
+														<tr>
+								<td class="tr_l"></td>
+								<td class="tr_r">
+									<div class="btn_row">
+										<a class="btn_wrong" href="https://siteheart.com/webconsultation/731850?s=1" target="siteheart_sitewindow_731850" onclick="o=window.open;o('https://siteheart.com/webconsultation/731850?s=1', 'siteheart_sitewindow_731850', 'width=550,height=400,top=30,left=30,resizable=yes'); return false;">
+											Заметили несоответствие?										</a>
+										<a href="javascript: window.print()" class="btn_print">Распечатать </a>
+									</div>
+									<div class="t_subscribe_txt">Хотите получать сообщение об изменении <br> статуса вашего отправления на электронную почту?</div>
+									<a href="javascript:showSubscribe()" class="btn_subscribe">Получать статус на e-mail</a>
+									<div class="t_info_delivery2" id="t_info_delivery2"></div>
+								</td>
+							</tr>
+						</table>
+						<div class="clear"></div>
+						<div id="blc_res" class="blc_res">
+							<div id="blc_res_inner" class="blc_res_inner" style=" display: none;">
+								<table id="track_table" class="track_table">
+									<tr>
+										<th class="th_1">Дата </th>
+										<th class="th_2">Время</th>
+										<th class="th_3">Страна </th>
+										<th class="th_4">Город</th>
+										<th class="th_5">Мест </th>
+										<th class="th_6">Сообщение/Детальное сообщение</th>
+									</tr>
+																	</table>
+															</div>
+						</div>
+					</div>
+					<div id="dialog_subsc" class="dialog_subsc" style="display: none;">
+						<div class="dialog_subsc">
+							<div class="sbs_title">Получить изменении статуса отправления на e-mail:</div>
+							<div class="sbs_label">Номер отправления:</div>
+							<input type="text" class="sbs_nomer" id="sbs_nomer">
+							<div class="sbs_label">email</div>
+							<input type="text" class="sbs_email" id="sbs_email">
+							<div class="sbs_agree">
+								<input type="checkbox" id="sbs_agree" value="1" checked>
+								<label for="sbs_agree">Хочу получать другие сообщения от Meest Group на e-mail</label>
+							</div>
+							<div>
+								<input type="button" class="button" value="Получить" onclick="subscribe()">
+							</div>
+						</div>
+					</div>
+					<div id="dlg_msg_subscr_ok" style="display:none">
+						Вы успешно подписались на сообщение при изменении статуса					</div>
+					<div id="dlg_msg_subscr_doubl" style="display:none">
+						Вы уже подписаны на уведомления об изменении статуса					</div>
+					<div id="dlg_msg_subscr_fail" style="display:none">
+						Не удается подписаться на изменение статусов					</div>
+					<script>
+						var err = 'no_find';
+						var lang = 'ru';
+						jQuery( document ).ready(function() {
+							if (err == 'no_find'){
+								//showMessage('', 'Відправлення не знайдено<br> Можливо це номер компанії відправника? Виберіть компанію  відправника та  повторіть пошук');
+							}
+						})
+					</script>
+
+					<script>
+						function validateEmail(email) {
+							var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+							return re.test(email);
+						}
+						function tracking_search(){
+							var send = false;
+							var t_form = document.getElementById('t_form');
+							if (t_company_sel != ''){
+								var track_num = jQuery('#declar').val();
+								track_num = track_num.replace(new RegExp('/','g'), '_');
+								var path = t_company_sel.replace('t_', '') + '/';
+
+								if (t_company_sel == 't_amway'){
+									track_num = 'AM' + track_num;
+								}
+
+								path = 'https://t.meest-group.com' + '/' + path + lang + '/' + track_num;
+								t_form.action = path;
+								t_form.target = '_blank';
+								send = true;
+							} else {
+								t_form.action = '';
+								t_form.target = '_self';
+								send = true;
+								//trackingSearch();
+							}
+
+							return send;
+						}
+
+						function showSubscribe() {
+							jQuery('#sbs_nomer').val(jQuery('#declar').val());
+							jQuery('#dialog_subsc').dialog({
+								dialogClass: 'dialog_subscribe',
+								width: 530,
+								height: 320,
+								modal: true
+							});
+						}
+
+						function subscribe(){
+							jQuery('#sbs_nomer, #sbs_email').removeClass('err');
+							var res = true;
+							var sbs_nomer = jQuery('#sbs_nomer').val();
+							var sbs_email = jQuery('#sbs_email').val();
+							if (sbs_nomer == ''){
+								 jQuery('#sbs_nomer').addClass('err');
+								 res = false;
+							}
+							if (!validateEmail(sbs_email)){
+								 jQuery('#sbs_email').addClass('err');
+								 res = false;
+							}
+							if (res){
+								var agent  = jQuery('#agent').val();
+								if (agent == ''){
+									var post_url = 'get.php?what=tracking&number=' + sbs_nomer;
+								} else {
+									var post_url = 'get.php?what=tracking_agent&number=' + sbs_nomer + '&agent=' + agent;
+								}
+								var agree  = document.getElementById('sbs_agree').checked;
+								if (agree){
+									post_url += '&agree=1';
+								} else {
+									post_url += '&agree=0';
+								}
+								post_url += '&out=html&subscribe&email=' + sbs_email;
+								jQuery.post(post_url, {}, function(res){
+									jQuery( '#dialog_subsc' ).dialog( 'close' );
+									if (res == '000'){
+										jQuery('#dlg_msg_subscr_ok').dialog();
+									} else {
+										if (res == '1') {
+											jQuery('#dlg_msg_subscr_doubl').dialog();
+										} else {
+											jQuery('#dlg_msg_subscr_fail').dialog();
+										}
+									}
+								})
+							}
+						}
+
+						var t_selector = '#t_lamoda, #t_amway, #t_leboutique, #t_bonprix, #t_next, #t_stylepit, #t_eurobuy, #t_answear, #t_modnakasta';
+						var t_company_sel = '';
+						jQuery( document ).ready(function() {
+
+							jQuery(t_selector).click( function() {
+								jQuery(t_selector).removeClass('t_company_selected');
+								if (this.id == t_company_sel){
+									t_company_sel = '';
+
+								} else {
+									t_company_sel = this.id;
+									jQuery('#' + this.id).addClass('t_company_selected');
+									//tracking_search(); document.forms['t_form'].submit();
+								}
+							} )
+
+							jQuery('#t_img_1').click( function() {
+								//window.parent.location.href = 'https://meest-group.globalmoney.ua/?base1c=1C_Logistic#debt';
+								window.parent.location.href = 'https://meest-express.com.ua/ru/services/mymeest';
+							});
+							jQuery('#t_img_2').click( function() {
+								window.parent.location.href = 'https://meest-express.com.ua/ru/services/mgnovennye-perevody';
+							});
+						});
+
+					</script>
+				</div>
+			</div>
+	   </div>
+	</div>
+</body>
+</html>

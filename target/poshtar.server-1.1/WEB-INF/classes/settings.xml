@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  ~ Copyright © 2016, Malyshev Vladislav,  thestrangesquirrel@gmail.com. This work is licensed under the Creative Commons Attribution-NonCommercial-NoDerivs 3.0 Unported License. To view a copy of this license, visit http://creativecommons.org/licenses/by-nc-nd/3.0/ or send a letter to Creative Commons, PO Box 1866, Mountain View, CA 94042, USA.
+  -->
+
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+    <entry key="FutureUrl">http://poshtar.pp.ua/</entry>
+    <!--<entry key="FutureUrl">http://poshtar.us-east-1.elasticbeanstalk.com/</entry>-->
+    <!--<entry key="FutureUrl">http://10.0.2.2:8080/</entry>-->
+    <!--<entry key="FutureUrl">http://192.168.1.132:8080/</entry>-->
+</properties>

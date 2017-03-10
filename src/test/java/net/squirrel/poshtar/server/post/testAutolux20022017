@@ -1,0 +1,810 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8">
+    <meta name="description" content="Отследить груз - читайте на страницах сайта компании Автолюкс. Пассажирские перевозки, бронирование билетов на автобусные рейсы по Украине."/>
+
+    <meta name="keywords" content="Грузовые перевозки, экспресс доставка груза и почты, пассажирские перевозки, купить билеты, бронирование билетов - Автолюкс"/>
+
+
+
+
+    <title>
+
+        Отследить груз | Автолюкс
+
+</title>
+    <link rel="shortcut icon" href="/static/img/favicon.ico" />
+
+        <link href="/static/css/bootstrap.css?1487601820" type="text/css" rel="stylesheet"/>
+        <link href="/static/css/fancybox/jquery.fancybox.css?1487601820" type="text/css" rel="stylesheet">
+        <link href="/static/css/style.css?1487601820" type="text/css" rel="stylesheet"/>
+        <link href="/static/css/overwrite.css?1487601820" type="text/css" rel="stylesheet"/>
+        <link href="/static/css/select2.css?1487601820" type="text/css" rel="stylesheet"/>
+        <link href="/static/css/custom-theme/jquery-ui-1.10.0.custom.css?1487601820" type="text/css" rel="stylesheet"/>
+        <link href="/static/css/social.css?1487601820" type="text/css" rel="stylesheet"/>
+        <link href="/static/css/loading.css?1487601820" type="text/css" rel="stylesheet"/>
+        <link href='http://fonts.googleapis.com/css?family=Roboto:400,100,300,100italic,300italic,400italic,500,500italic,700,700italic,900,900italic%26subset=latin,cyrillic'
+              rel='stylesheet' type='text/css'>
+
+
+
+        <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+        <!--[if lt IE 9]>
+        <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+        <script src="/static/js/jquery.js"></script>
+        <script src="/static/js/jquery-ui-1.9.2.custom.min.js"></script>
+        <script src="/static/js/jquery.easing.1.3.js"></script>
+        <script src="/static/js/bootstrap.min.js"></script>
+        <script src="/static/js/jquery.fancybox.pack.js"></script>
+        <script src="/static/js/jquery.fancybox-media.js"></script>
+        <script src="/static/js/google-code-prettify/prettify.js"></script>
+        <script src="/static/js/jquery.flexslider.js"></script>
+        <script src="/static/js/animate.js"></script>
+        <script src="/static/js/custom.js"></script>
+        <script src="/static/js/markerclusterer.js"></script>
+        <script>
+            $.fn.locale = 'ru';
+        </script>
+        <script src="/static/js/select2.js"></script>
+        <script src="/static/js/jquery.validate.js?version=2"></script>
+        <script src="/static/js/autolux.js?version=1"></script>
+        <script src="/static/js/socialbars.js"></script>
+        <script src="/static/js/bootstrap-notify.min.js"></script>
+
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+
+    <style>
+        html, body, #map-canvas {
+            height: 100%;
+            width: 100%;
+            margin: 0;
+            padding: 0;
+        }
+
+        #map-canvas img {
+            border: 0 none;
+            height: auto;
+            max-width: none;
+        }
+    </style>
+
+
+        <script type="text/javascript"
+                src="https://maps.googleapis.com/maps/api/js?sensor=false&amp;language=ru&key=AIzaSyBQPs2sp5JiVHtK5HTeudz4rhwQOGTV0xw"></script>
+
+
+    <script type="text/javascript">
+        function initialize() {
+            var mapOptions = {
+                center: new google.maps.LatLng(48.41706600000000, 35.06025900000000),  // центрирование
+                zoom: 14,
+                mapTypeId: google.maps.MapTypeId.ROADMAP
+            };
+            var map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);
+
+            var infowindow = new google.maps.InfoWindow({
+
+
+                    content: '<div style="color: #000; text-align: justify;">' + '<img style="width: 20px; height: 20px" src="/static/img/auto.png" > &nbsp;' +
+                    '<strong>' + 'Днепр (Днепропетровск)' + '</strong>' +
+                    '<br />' + '<i class="fa fa-map-marker" style="color: #4A449B;"></i>&nbsp;&nbsp;' + 'пр-т Героев, 12' +
+                    '<br />' + '<i class="fa fa-phone" style="color: #4A449B;"></i>&nbsp;&nbsp;' + '+38 056 785 20 01' +
+                    '<br />' + '<i class="fa fa-clock-o" style="color: #4A449B;"></i>&nbsp;&nbsp;' + 'пн-пт: 08:00 - 20:00; сб: 08:00 - 19:00; вс: выходной' +
+                    '</div>'
+
+            });
+
+            var image = new google.maps.MarkerImage('/static/img/map_marker_violet_se.png',
+                    new google.maps.Size(32, 46),
+                    new google.maps.Point(0, 0),
+                    new google.maps.Point(0, 32)
+            );
+
+            var marker = new google.maps.Marker({
+                position: new google.maps.LatLng(48.41706600000000, 35.06025900000000),  // координаты маркера
+                map: map,
+                icon: image,
+                title: 'Офис местонахождения груза: ',
+                clickable: true
+            });
+
+
+            google.maps.event.addListener(marker, 'click', function () {
+                infowindow.open(map, marker);
+            });
+            infowindow.open(map, marker);
+        }
+        google.maps.event.addDomListener(window, 'load', initialize);
+    </script>
+
+
+</head>
+
+<body onload="initialize();">
+
+<!-- <div id="socialside"></div> -->
+
+<!-- Start SiteHeart code -->
+<script>
+    (function () {
+        var widget_id = 737306;
+        _shcp = [
+            {widget_id: widget_id}
+        ];
+        var lang = (navigator.language || navigator.systemLanguage
+        || navigator.userLanguage || "en")
+                .substr(0, 2).toLowerCase();
+        var url = "widget.siteheart.com/widget/sh/" + widget_id + "/" + lang + "/widget.js";
+        var hcc = document.createElement("script");
+        hcc.type = "text/javascript";
+        hcc.async = true;
+        hcc.src = ("https:" == document.location.protocol ? "https" : "http")
+        + "://" + url;
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hcc, s.nextSibling);
+    })();
+</script>
+<!-- End SiteHeart code -->
+
+
+
+    <!-- Start Google Analytics code -->
+    <script>
+        (function (i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r;
+            i[r] = i[r] || function () {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date();
+            a = s.createElement(o),
+                    m = s.getElementsByTagName(o)[0];
+            a.async = 1;
+            a.src = g;
+            m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+        ga('create', 'UA-56670640-1', 'auto');
+        ga('send', 'pageview');
+    </script>
+    <!-- Stop Google Analytics code -->
+
+
+    <!-- Yandex.Metrika counter -->
+    <script type="text/javascript">
+        (function (d, w, c) {
+            (w[c] = w[c] || []).push(function() {
+                try {
+                    w.yaCounter37471420 = new Ya.Metrika({
+                        id:37471420,
+                        clickmap:true,
+                        trackLinks:true,
+                        accurateTrackBounce:true,
+                        webvisor:true
+                    });
+                } catch(e) { }
+            });
+
+            var n = d.getElementsByTagName("script")[0],
+                s = d.createElement("script"),
+                f = function () { n.parentNode.insertBefore(s, n); };
+            s.type = "text/javascript";
+            s.async = true;
+            s.src = "https://mc.yandex.ru/metrika/watch.js";
+
+            if (w.opera == "[object Opera]") {
+                d.addEventListener("DOMContentLoaded", f, false);
+            } else { f(); }
+        })(document, window, "yandex_metrika_callbacks");
+    </script>
+    <noscript><div><img src="https://mc.yandex.ru/watch/37471420" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+    <!-- /Yandex.Metrika counter -->
+
+
+
+<div id="wrapper">
+
+
+        <header>
+            <div class="navbar navbar-default navbar-static-top">
+
+                <div class="container">
+
+                <div class="pull-left lang-block">
+
+
+                        <a href="/set_language/?lang=ua">
+                            <img alt="lang_ua" src="/static/img/flags/ua.png"/>&nbsp;Укр
+                        </a>
+
+                        <a href="/set_language/?lang=ru">
+                            <img alt="lang_ru" src="/static/img/flags/ru.png"/>&nbsp;Рус
+                            <i class="fa fa-check"></i>
+                        </a>
+
+
+                        <a href="/set_language/?lang=en">
+                            <img alt="lang_en" src="/static/img/flags/en.png"/>&nbsp;Eng
+                        </a>
+
+
+
+                </div>
+
+                    <div class="navbar-header">
+
+                        <button type="button" class="navbar-toggle" data-toggle="collapse"
+                                data-target=".navbar-collapse">
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+
+
+                            <a class="navbar-brand" href="/" style="margin-left: 0">
+                                <img src="/static/img/logos/express_logo_ru.png">
+                            </a>
+
+                    </div>
+
+                    <div class="navbar-collapse collapse">
+
+
+
+                            <ul class="nav navbar-nav">
+                                <li><a class="menu_hover" href="/">Главная</a></li>
+                                <li><a class="menu_hover" href="/about/">О компании</a></li>
+                                <li><a class="menu_hover" href="/services/">Услуги</a></li>
+                                <li><a class="menu_hover" href="/representatives/">Представительства</a></li>
+                                <li><a class="menu_hover" href="/news/">Новости</a></li>
+                                <li><a class="menu_hover" href="/contacts/">Контакты</a></li>
+                            </ul>
+
+
+
+                    </div>
+                </div>
+            </div>
+        </header>
+
+
+
+
+
+    <div class="intro-header">
+
+        <div class="container-fluid">
+            <div class="row">
+
+                <div class="col-sm-12 img-responsive cargo-image-area" id="main_img">
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <section id="content" style="min-height: 430px">
+
+        <script>
+
+                $(document).ready(function () {
+                    $("#departure_city").select2({
+                        placeholder: "Укажите город и офис отправления",
+                        allowClear: true,
+                        matcher: function (term, text) {
+                            return text.toUpperCase().indexOf(term.toUpperCase()) == 0;
+                        },
+                        sort: {
+                            lang: 'rus',
+                            type: 'asc'
+                        },
+                        value_top: '8000000000' // текстовое значение, которое будет поднято в начало списка
+                    });
+
+                    $("#arrive_city").select2({
+                        placeholder: "Укажите город и офис прибытия",
+                        allowClear: true,
+                        matcher: function (term, text) {
+                            return text.toUpperCase().indexOf(term.toUpperCase()) == 0;
+                        },
+                        sort: {
+                            lang: 'rus',
+                            type: 'asc'
+                        }
+                    });
+                });
+
+        </script>
+
+        <div class="container">
+            <div class="row">
+
+
+
+
+                    <div class="col-md-3" style="/*background-color: #f2f2f2;*/ padding-left: 0; padding-right: 0">
+
+                        <ul style="list-style-type: none; margin: 0 0 0 0; font-size: 13px; font-weight: 400;">
+                            <li>
+                                <a href="/main_cargo/" class="left-vert">
+                                    <img alt="arrow" class="left-violet-arrow"
+                                         src="/static/img/left_violet_arrow.png">
+                                    <i class="fa fa-truck pull-right" style="line-height: 1.7"></i>
+                                    <span>ЭКСПРЕСС-ДОСТАВКА ГРУЗА И ПОЧТЫ</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/cargo_request/" class="left-vert">
+                                    <img alt="arrow" class="left-violet-arrow"
+                                         src="/static/img/left_violet_arrow.png">
+                                    <i class="glyphicon glyphicon-transfer pull-right" style="line-height: 1.7"></i>
+                                    <span>ВЫЗОВ КУРЬЕРА</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/calc/" class="left-vert">
+                                    <img alt="arrow" class="left-violet-arrow"
+                                         src="/static/img/left_violet_arrow.png">
+                                    <i class="fa fa-calculator pull-right" style="line-height: 1.7"></i>
+                                    <span>КАЛЬКУЛЯТОР СТОИМОСТИ</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/tariffs/" class="left-vert">
+                                    <img alt="arrow" class="left-violet-arrow"
+                                         src="/static/img/left_violet_arrow.png">
+                                    <i class="fa fa-archive pull-right" style="line-height: 1.7"></i>
+                                    <span>ТАРИФЫ И ДОСТАВКА</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/tracking/" class="left-vert">
+                                    <img alt="arrow" class="left-violet-arrow"
+                                         src="/static/img/left_violet_arrow.png">
+                                    <i class="fa fa-map-marker pull-right" style="line-height: 1.7"></i>
+                                    <span>ОТСЛЕДИТЬ ГРУЗ</span>
+                                </a>
+                            </li>
+                        </ul>
+
+
+                        <!-- <a class="pass-red-nav" href="/main_pass/" style="">
+                            <i class="fa fa-angle-double-left pull-left"
+                               style="color: #EC131B; font-size: 42px; padding-top: 10px; padding-left: 12px;"></i>
+
+                            <div style="padding-top: 10px; padding-right: 10px;">ПАССАЖИРСКИЕ</div>
+                            <div style="padding-right: 10px;">ПЕРЕВОЗКИ</div>
+                        </a> -->
+
+                    </div>
+
+
+
+
+                <div class="col-md-9" style="padding-right: 0; padding-left: 0">
+
+                    <div class="widget" style="margin-top: -320px; z-index: 900; border: none;">
+
+                        <div style="text-align: right">
+                            <h1 class="page-widget-heading">
+
+
+        ОТСЛЕДИТЬ ГРУЗ
+
+</h1>
+                        </div>
+
+                        <div class="widget-content"
+                             style="-webkit-border-radius: 10px; border-radius: 10px; border: none; background-color: rgba(255, 255, 255, 0.9); /*padding-right: 0; */">
+
+                            <div style="padding: 25px 25px 25px 25px">
+
+
+
+                                <div>
+                                    <ul class="breadcrumb main-nav-element">
+
+
+
+
+
+
+                                                <li>
+                                                    <a href="/"><i class="fa fa-home"></i></a>
+                                                </li>
+                                                <li>
+                                                    <a href="/main_cargo/">Грузовые перевозки</a>
+                                                </li>
+
+
+
+
+    <li class="active">
+
+            Отследить груз
+
+    </li>
+
+
+                                    </ul>
+                                </div>
+
+
+
+
+
+
+        <div>
+
+            <h4>Узнайте где находится Ваш груз</h4>
+
+
+            <div class="img-thumbnail img-responsive" style="width:100%; height:450px; text-align: center"
+                 id="map-canvas">
+
+
+                <img alt="tracking" src="/static/img/collages/tracking.png">
+
+
+            </div>
+
+
+            <div id="cargo_info">
+
+
+                    <div class="alert alert-success shadow-right" style="margin: 5px">
+                        <button type="button" class="close" data-dismiss="alert">×</button>
+                        <strong>Данные о посылке №102110023444: </strong> &nbsp;Статус: &nbsp;
+
+
+                            <span class="label label-info"
+                                  style="font-size: 7pt">Выдана</span>
+
+
+
+                        <br/>
+                        <strong>Создана: </strong> &nbsp; 2016-07-09 14:31:43
+                        <br>
+
+
+
+
+                            &#8226; Место номер 1, выдано в офисе: Днепр (Днепропетровск) (пр-т Героев, 12) <br/>
+
+
+
+                    </div>
+
+
+
+
+            </div>
+
+
+
+
+
+            <div style="padding-top: 20px;">
+
+                <form id="TrackingForm" name="TrackingForm" method="post" action="/tracking/"
+                      class="form-horizontal">
+                    <input type='hidden' name='csrfmiddlewaretoken' value='8CEXEN3nvtDs2t2BIUN8l4U5xVyPjgfnuq0UfFFd6EK0wBe4jyAM75ObNpmzkvVU' />
+                    <fieldset>
+
+                        <table id="table-cargo-request" class="table table-condensed">
+                            <tbody>
+
+                            <tr>
+                                <td style="border: none; vertical-align: middle; text-align: right;">
+                                    Номер накладной:
+                                </td>
+                                <td style="width: 10px; border: none; color: red; vertical-align: middle;">*</td>
+                                <td style="border: none; vertical-align: middle;">
+
+                                    <input type="text" class="form-control" id="ttn_search"
+                                           name="ttn_search" onkeydown="return ( event.ctrlKey || event.altKey
+                                            || (47<event.keyCode && event.keyCode<58 && event.shiftKey==false)
+                                            || (95<event.keyCode && event.keyCode<106)
+                                            || (event.keyCode==8) || (event.keyCode==9) || event.keyCode == 13
+                                            || (event.keyCode>34 && event.keyCode<40) || (event.keyCode==46) )"
+                                           style="width: 345px; height: 45px; font-size: 16px;" maxlength="100"
+                                           placeholder="Введите номер для поиска" required=""
+                                           >
+                                </td>
+                            </tr>
+
+
+
+
+
+
+
+
+                            <tr>
+                                <td style="border: none; vertical-align: middle; text-align: right;">
+
+                                </td>
+                                <td style="width: 10px; border: none;"></td>
+                                <td style="border: none; vertical-align: middle;">
+
+                                    <button type="submit" class="btn autolux-flat-button" id="submit"
+                                            style="width: 170px; vertical-align: middle;">
+                                        <i class="fa fa-search pull-left" style="line-height: 1.7;"></i>
+                                        Искать
+                                    </button>
+
+                                    <button type="button" class="btn autolux-flat-button-danger" id="clear_search"
+                                            style="width: 170px; vertical-align: middle;"
+                                            onclick="$('#ttn_search').val(''); $('.alert').alert('close')">
+                                        <i class="fa fa-times pull-left" style="line-height: 1.7;"></i>
+                                        Очистить
+                                    </button>
+
+                                </td>
+                            </tr>
+
+                            </tbody>
+                        </table>
+
+                    </fieldset>
+
+                </form>
+
+            </div>
+
+        </div>
+
+
+
+
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <strong class="news-lower-title" style="color: #000; font-size: 12px;">
+
+
+                        ПОСЛЕДНИЕ НОВОСТИ КОМПАНИИ
+
+
+                </strong>
+
+                <hr class="news-line-lower">
+
+            </div>
+        </div>
+
+    </section>
+
+
+
+
+
+
+
+
+
+            <section>
+                <div class="container">
+                    <div class="row">
+
+                        <div class="widget col-sm-12 news-block">
+
+
+
+                                <div class="col-sm-4">
+                                    <div>
+                                        <p class="news-date">14 февраля 2017 г.</p>
+
+                                        <article>
+                                            Уважаемые клиенты! Рады вам сообщить, что 15.02.17 открывается новый офис нашего предприятия по адресу: Киев, ул. Армянская, 29  Тел.: 095-273-71-01.
+                                        </article>
+
+                                    </div>
+                                    <p>
+                                        <a href="/news/" class="btn btn-small btn-default btn-news" role="button">
+                                            Читать далее&nbsp;&nbsp;</a>
+                                    </p>
+                                </div>
+
+
+
+                                <div class="col-sm-4">
+                                    <div>
+                                        <p class="news-date">13 февраля 2017 г.</p>
+
+                                        <article>
+                                            До 14.02.17 (включительно) продлён период временного прекращения работы закрытого на реконструкцию офиса нашего предприятия, расположенного по адресу:  Киев, Вокзальная площадь, 2 (ТЦ «Полесье»).
+                                        </article>
+
+                                    </div>
+                                    <p>
+                                        <a href="/news/" class="btn btn-small btn-default btn-news" role="button">
+                                            Читать далее&nbsp;&nbsp;</a>
+                                    </p>
+                                </div>
+
+
+
+                                <div class="col-sm-4">
+                                    <div>
+                                        <p class="news-date">6 февраля 2017 г.</p>
+
+                                        <article>
+                                            На период с 06.02.17 по 13.02.17 временно закрыт на реконструкцию офис нашего предприятия, расположенный по адресу: Киев, Вокзальная площадь, 2 (ТЦ «Полесье»).
+                                        </article>
+
+                                    </div>
+                                    <p>
+                                        <a href="/news/" class="btn btn-small btn-default btn-news" role="button">
+                                            Читать далее&nbsp;&nbsp;</a>
+                                    </p>
+                                </div>
+
+
+
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+
+
+
+
+
+
+
+
+        <section>
+            <div id="footer-info" class="container-fluid navbar">
+                <div class="row">
+
+
+
+                        <div id="footer-info-copyright" class="col-lg-4 col-md-6">
+
+
+
+                        </div>
+
+                        <div id="footer-info-search" class="col-lg-4 col-md-6">
+
+
+
+                            <form method="post" action="/tracking/" class="form-base-search" id="form-base-search">
+                                <input type='hidden' name='csrfmiddlewaretoken' value='8CEXEN3nvtDs2t2BIUN8l4U5xVyPjgfnuq0UfFFd6EK0wBe4jyAM75ObNpmzkvVU' />
+                                <div>
+                                    <input id="ttn_search" name="ttn_search"
+                                           class="form-control search-cargo-input only-numbers"
+                                           type="text" placeholder="Введите номер отправления">
+
+                                    <img alt="search cargo" src="/static/img/search_glass_mini.png"
+                                         onclick="document.forms['form-base-search'].submit();">
+                                </div>
+                            </form>
+
+                        </div>
+
+                        <div id="footer-info-service" class="col-lg-4 col-md-12">
+
+                            <table>
+                                <tr>
+                                    <td>ИНФОРМАЦИОННАЯ СЛУЖБА:</td>
+                                    <td>+38 044 5360055</td>
+                                </tr>
+                            </table>
+
+                        </div>
+
+
+
+                </div>
+            </div>
+
+
+
+
+            <div class="container-fluid navbar footer-info-navbar">
+
+
+
+                    <div class="row">
+                        <div class="col-md-6">
+
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <div class="widget">
+
+                                        <h6 class="widgetheading"> Контакты центрального офиса: </h6>
+
+                                        <ul class="link-list">
+                                            <li>
+                                                <i class="fa fa-map-marker"></i>&nbsp; Украина, 03062, г. Киев, ул. Чистяковская, 30
+                                            </li>
+                                            <li>
+                                                <i class="fa fa-phone"></i>&nbsp; +38 044 536 00 55, +38 044 536 00 53
+                                            </li>
+                                            <li>
+                                                <i class="fa fa-phone hot-line-i"></i>&nbsp; горячая линия 0 800 505 008
+                                            </li>
+                                            <li>
+                                                <i class="fa fa-envelope"></i>&nbsp; info@autolux.ua
+                                            </li>
+                                        </ul>
+
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="widget">
+
+                                        <h6 class="widgetheading"> Услуги компании "Автолюкс" </h6>
+
+                                        <ul class="link-list">
+                                            <li><a href="/calc/">Расчет стоимости перевозки</a></li>
+                                            <li><a href="/main_cargo/">Экспресс-доставка грузов и почты</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="col-md-6">
+
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <div class="widget">
+
+                                        <h6 class="widgetheading"> Информация для клиентов </h6>
+
+                                        <ul class="link-list">
+                                            <li><a href="/bonus/">Бонусная программа</a></li>
+                                            <li><a href="/news/">Новости компании</a></li>
+                                            <li><a href="/tracking/">Отследить груз</a></li>
+                                            <li><a href="/tariffs/">Тарифы и доставка</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="widget">
+
+                                        <h6 class="widgetheading"> Компания Автолюкс </h6>
+
+                                        <ul class="link-list">
+                                            <li><a href="/about/">О компании Автолюкс</a></li>
+                                            <li><a href="/vacancies/">Вакансии</a></li>
+                                            <li><a href="/journal/">Журнал Автолюкс</a></li>
+                                            <li><a href="/representatives/">Представительства компании Автолюкс</a></li>
+                                            <li><a href="/contacts/">Обратная связь</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+
+
+            </div>
+
+        </section>
+
+
+
+
+
+
+</div>
+
+<a href="#" class="scrollup"><i class="fa fa-angle-up active"></i></a>
+
+</body>
+</html>

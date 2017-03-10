@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  ~ Copyright © 2016, Malyshev Vladislav,  thestrangesquirrel@gmail.com. This work is licensed under the Creative Commons Attribution-NonCommercial-NoDerivs 3.0 Unported License. To view a copy of this license, visit http://creativecommons.org/licenses/by-nc-nd/3.0/ or send a letter to Creative Commons, PO Box 1866, Mountain View, CA 94042, USA.
+  -->
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.0.xsd"
+>
+    <context:annotation-config/>
+
+    <bean id="providersManager" class="net.squirrel.poshtar.server.ImplProvidersManager"
+          scope="singleton">
+        <constructor-arg name="providersDAO" ref="providersDAO"></constructor-arg>
+    </bean>
+
+    <bean id="providersDAO" class="net.squirrel.poshtar.server.providers_dao.provider_file_storage.FileProviderDAO"
+          scope="singleton">
+        <constructor-arg value="providers.xml"></constructor-arg>
+    </bean>
+    <bean id="settingsManager" class="net.squirrel.poshtar.server.ImplSettingsManager"
+          scope="singleton" depends-on="providersDAO">
+        <constructor-arg name="providersDAO" ref="providersDAO"></constructor-arg>
+    </bean>
+
+</beans>

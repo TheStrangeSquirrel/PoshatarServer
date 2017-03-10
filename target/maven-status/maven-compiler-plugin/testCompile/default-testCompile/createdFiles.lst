@@ -1,0 +1,9 @@
+net\squirrel\poshtar\server\post\gunsel\PostGunselTest.class
+net\squirrel\poshtar\server\post\sat\PostSatTest.class
+net\squirrel\poshtar\server\post\meest_express\PostMeestExpressTest.class
+net\squirrel\poshtar\server\post\intime\PostIntimeTest.class
+net\squirrel\poshtar\server\post\delivery\DeliveryPostTest.class
+net\squirrel\poshtar\server\post\intime\PostIntimeSiteTest.class
+net\squirrel\poshtar\server\post\PostNovaPoshtaTest.class
+net\squirrel\poshtar\server\post\PostUkrCargoTest.class
+net\squirrel\poshtar\server\post\PostAutoLuxTest.class

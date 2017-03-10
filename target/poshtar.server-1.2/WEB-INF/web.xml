@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+
+<!--
+  ~ Copyright © 2016, Malyshev Vladislav,  thestrangesquirrel@gmail.com. This work is licensed under the Creative Commons Attribution-NonCommercial-NoDerivs 3.0 Unported License. To view a copy of this license, visit http://creativecommons.org/licenses/by-nc-nd/3.0/ or send a letter to Creative Commons, PO Box 1866, Mountain View, CA 94042, USA.
+  -->
+
+<web-app xmlns="http://java.sun.com/xml/ns/j2ee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd"
+         version="2.4">
+<listener>
+    <listener-class>net.squirrel.poshtar.server.AppContextListener</listener-class>
+</listener>
+    <filter>
+        <filter-name>LogRequestsFilter</filter-name>
+        <filter-class>net.squirrel.poshtar.server.filter.LogRequestsFilter</filter-class>
+    </filter>
+
+    <filter-mapping>
+        <filter-name>LogRequestsFilter</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
+
+    <servlet>
+        <servlet-name>SettingsServlet</servlet-name>
+        <servlet-class>net.squirrel.poshtar.server.controllers.ServerSettingsController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ProvidersServlet</servlet-name>
+        <servlet-class>net.squirrel.poshtar.server.controllers.ProvidersController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>TrackServlet</servlet-name>
+        <servlet-class>net.squirrel.poshtar.server.controllers.TrackController</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>ProvidersServlet</servlet-name>
+        <url-pattern>/providers</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>TrackServlet</servlet-name>
+        <url-pattern>/track</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>SettingsServlet</servlet-name>
+        <url-pattern>/settings</url-pattern>
+    </servlet-mapping>
+</web-app>     
